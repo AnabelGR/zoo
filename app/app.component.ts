@@ -23,11 +23,11 @@ export class AppComponent {
   selectedAnimal: null;
 
   masterAnimalList: Animal[] = [
-      new Animal('Giraffe', 'Rose', 3, 'Herbivore', 'Elephant Corral', 5, 'Female', 'pumpkins', 'running', './resources/images/giraffe.png'),
-      new Animal('Zebra', 'Mo', 1, 'Carnivore', 'Africa Safari', 2, 'Male', 'beach balls', 'loud noises', './resources/images/zebra.png'),
-      new Animal('Lion', 'Inra', 8, 'Carnivore', 'Africa Safari', 3, 'Female', 'running', 'loud noises', './resources/images/lion.png'),
-      new Animal('Penguin', 'Zar', 1, 'Carnivore', 'Tundra', 1, 'Male', 'seals', 'people', './resources/images/penguin.png'),
-      new Animal('Hippo', 'Bertha', 2, 'Herbivore', 'Africa Safari', 3, 'Female', 'strawberries', 'loud noises', './resources/images/hippo.png')
+      new Animal('./resources/images/giraffe.jpg', 'Giraffe', 'Rose', 3, 'Herbivore', 'Elephant Corral', 5, 'Female', 'pumpkins', 'running', './resources/images/giraffe.png'),
+      new Animal('./resources/images/zebra.jpg', 'Zebra', 'Mo', 1, 'Carnivore', 'Africa Safari', 2, 'Male', 'beach balls', 'loud noises', './resources/images/zebra.png'),
+      new Animal('./resources/images/lion.jpg','Lion', 'Inra', 8, 'Carnivore', 'Africa Safari', 3, 'Male', 'running', 'water', './resources/images/lion.png'),
+      new Animal('./resources/images/penguin.jpg', 'Penguin', 'Zar', 1, 'Carnivore', 'Tundra', 1, 'Male', 'seals', 'people', './resources/images/penguin.png'),
+      new Animal('./resources/images/hippo.jpg', 'Hippo', 'Bertha', 2, 'Herbivore', 'Africa Safari', 3, 'Female', 'strawberries', 'loud noises', './resources/images/hippo.png')
     ];
 
   editAnimal(clickedAnimal) {

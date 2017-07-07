@@ -5,15 +5,16 @@ import { Animal } from './animal.model';
   selector: 'animal-list',
   template: `
   <select (change)="onChange($event.target.value)">
-    <option value="allAnimals" selected="selected">ALL ANIMALS</option>
+    <option value="allAnimals">ALL ANIMALS</option>
     <option value="youngAnimals">YOUNG ANIMALS</option>
     <option value="matureAnimals">MATURE ANIMALS</option>
   </select>
-  <ul>
-    <li (click)="isAge(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | sortingByAge:filterBySortingByAge"><h3 class="animal">{{currentAnimal.species}}: {{currentAnimal.name}}</h3><ol>Age: {{currentAnimal.age}}</ol><ol>Gender: {{currentAnimal.gender}}</ol><ol>Diet: {{currentAnimal.diet}}</ol><ol>Location: {{currentAnimal.location}}</ol><ol>Caretakers needed: {{currentAnimal.caretakers}}</ol><ol>Likes: {{currentAnimal.likes}}</ol><ol>Dislikes: {{currentAnimal.dislikes}}</ol><ol>Tracks: <img src={{currentAnimal.imageUrl}} class="tracks"/></ol>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let currentAnimal of childAnimalList | sortingByAge:filterBySortingByAge"><h3 class="animal">{{currentAnimal.species}}: {{currentAnimal.name}}</h3><p><img src={{currentAnimal.photoLink}} class="photo"/></p><p>Age: {{currentAnimal.age}}</p><p>Gender: {{currentAnimal.gender}}</p><p>Diet: {{currentAnimal.diet}}</p><p>Location: {{currentAnimal.location}}</p><p>Caretakers needed: {{currentAnimal.caretakers}}</p><p>Likes: {{currentAnimal.likes}}</p><p>Dislikes: {{currentAnimal.dislikes}}</p><p>Tracks:<br><img src={{currentAnimal.imageUrl}} class="tracks"/></p>
       <button class="btn" (click)="editButtonHasBeenClicked(currentAnimal)">EDIT</button>
-    </li>
-  </ul>
+      <hr>
+    </div>
+  </div>
   `
 })
 
@@ -29,6 +30,7 @@ export class AnimalListComponent {
   onChange(optionFromMenu) {
     this.filterBySortingByAge = optionFromMenu;
   }
+
   toggleAge(clickedAnimal: Animal, setSortingByAge: number) {
      clickedAnimal.age = setSortingByAge;
   }

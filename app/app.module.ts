@@ -6,7 +6,6 @@ import { AnimalListComponent }  from './animal-list.component';
 import { EditAnimalComponent } from './edit-animal.component';
 import { NewAnimalComponent } from './new-animal.component';
 import { SortingByAgePipe } from './sortingByAge.pipe';
-import { DateFormatPipe } from './dateFormat.pipe'
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import { DateFormatPipe } from './dateFormat.pipe'
                   EditAnimalComponent,
                   NewAnimalComponent,
                   SortingByAgePipe,
-                  DateFormatPipe
                 ],
   bootstrap:    [ AppComponent ]
 })

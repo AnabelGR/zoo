@@ -4,7 +4,7 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'new-animal',
   template: `
-  <div class="container">
+  <div class="container" id="newForm">
     <h1>New Animal</h1>
       <div class="row">
         <div class="col-md-3">
@@ -27,7 +27,7 @@ import { Animal } from './animal.model';
         <label>Enter Animal Age:</label>
         </div>
          <div class="col-md-9">
-        <input #newAge type="text">
+        <input #newAge type="number">
         </div>
       </div>
       <div class="row">
@@ -51,9 +51,9 @@ import { Animal } from './animal.model';
         <label>Enter Animal Caretakers:</label>
         </div>
          <div class="col-md-9">
-        <input #newCaretakers type="text">
+        <input #newCaretakers type="number">
         </div>
-        </div>
+      </div>
       <div class="row">
         <div class="col-md-3">
         <label>Enter Animal Gender:</label>
@@ -86,7 +86,15 @@ import { Animal } from './animal.model';
         <input #newImageUrl type="text">
         </div>
       </div>
-       <button (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newGender.value, newLikes.value, newDislikes.value, newImageUrl.value);">ADD</button>
+      <div class="row">
+        <div class="col-md-3">
+        <label>Enter Animal Photo Link:</label>
+        </div>
+         <div class="col-md-9">
+        <input #newPhotoLink type="text">
+        </div>
+      </div>
+       <button (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newGender.value, newLikes.value, newDislikes.value, newImageUrl.value, newPhotoLink.value);">ADD</button>
      </div>
   `
 })
@@ -94,8 +102,8 @@ import { Animal } from './animal.model';
 export class NewAnimalComponent {
   @Output() newAnimalSender = new EventEmitter();
 
-  submitForm(species: string, name: string, age: number, diet: string, location: string, caretakers: number, gender: string, likes: string, dislikes: string, imageUrl: string) {
-    var newAnimalToAdd: Animal = new Animal(species, name, age, diet, location, caretakers, gender, likes, dislikes, imageUrl);
+  submitForm(photoLink: string, species: string, name: string, age: number, diet: string, location: string, caretakers: number, gender: string, likes: string, dislikes: string, imageUrl: string) {
+    var newAnimalToAdd: Animal = new Animal(photoLink, species, name, age, diet, location, caretakers, gender, likes, dislikes, imageUrl);
     this.newAnimalSender.emit(newAnimalToAdd);
   }
 }

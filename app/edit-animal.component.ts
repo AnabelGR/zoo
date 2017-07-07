@@ -4,20 +4,38 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'edit-animal',
   template: `
-    <div>
-        <div *ngIf="childSelectedAnimal">
-          <h3>{{childSelectedAnimal.species}}: {{childSelectedAnimal.name}}</h3>
-          <hr>
-          <h3>Edit Animal</h3>
-          <label>Enter Animal's Name:</label>
+    <div class="container" id="editForm">
+      <div *ngIf="childSelectedAnimal">
+        <h3>{{childSelectedAnimal.species}}: {{childSelectedAnimal.name}}</h3>
+        <h1>Edit Animal</h1>
+        <div class="row">
+          <div class="col-md-3">
+          <label>Enter Animal Name:</label>
+          </div>
+          <div class="col-md-9">
           <input [(ngModel)]="childSelectedAnimal.name">
-          <label>Enter Animal's Age:</label>
-          <input [(ngModel)]="childSelectedAnimal.age">
-          <label>Enter Animal's Caretakers:</label>
-          <input [(ngModel)]="childSelectedAnimal.caretakers">
-          <button (click)="doneButtonClicked()">DONE</button>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-md-3">
+          <label>Enter Animal Age:</label>
+          </div>
+           <div class="col-md-9">
+           <input [(ngModel)]="childSelectedAnimal.age">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+          <label>Enter Animal Caretakers:</label>
+          </div>
+           <div class="col-md-9">
+           <input [(ngModel)]="childSelectedAnimal.caretakers">
+          </div>
+          </div>
+        <button (click)="doneButtonClicked()">DONE</button>
       </div>
+      <hr>
+    </div>
   `
 })
 
