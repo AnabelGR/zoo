@@ -11,11 +11,16 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="systemjs.config.js"></script>
     <link rel="stylesheet" href="build/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
   </head>
   <body>
+    <div class="container-fluid">
+      <div class="jumbotron jumbotron-fluid"  style="background-image: url(./resources/images/header.png); background-size: cover">
+      </div>
     <app-root>Loading...</app-root>
   </body>
   <footer>

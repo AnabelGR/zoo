@@ -4,44 +4,80 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'new-animal',
   template: `
+  <div class="container">
     <h1>New Animal</h1>
-    <div>
-    <div>
-      <label>Enter Animal Species:</label>
-      <input #newSpecies>
-    </div>
-    <div>
-      <label>Enter Animal Name:</label>
-      <input #newName>
-    </div>
-    <div>
-      <label>Enter Animal Age:</label>
-      <input #newAge>
-    </div>
-    <div>
-      <label>Enter Animal Diet:</label>
-      <input #newDiet>
-    </div>
-    <div>
-      <label>Enter Animal Location:</label>
-      <input #newLocation>
-    </div>
-    <div>
-      <label>Enter Animal Caretakers:</label>
-      <input #newCaretakers>
-    </div>
-    <div>
-      <label>Enter Animal Gender:</label>
-      <input #newGender>
-    </div>
-    <div>
-      <label>Enter Animal Likes:</label>
-      <input #newLikes>
-    </div>
-    <div>
-      <label>Enter Animal Dislikes:</label>
-      <input #newDislikes>
-    </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Species:</label>
+        </div>
+        <div class="col-md-8">
+        <input #newSpecies type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Name:</label>
+        </div>
+        <div class="col-md-8">
+        <input #newName type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Age:</label>
+        </div>
+         <div class="col-md-8">
+        <input #newAge type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Diet:</label>
+        </div>
+         <div class="col-md-8">
+        <input #newDiet type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Location:</label>
+        </div>
+         <div class="col-md-8">
+        <input #newLocation type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Caretakers:</label>
+        </div>
+         <div class="col-md-8">
+        <input #newCaretakers type="text">
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Gender:</label>
+        </div>
+        <div class="col-md-8">
+        <input #newGender type="text">
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Likes:</label>
+        </div>
+         <div class="col-md-8">
+        <input #newLikes type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+        <label>Enter Animal Dislikes:</label>
+        </div>
+         <div class="col-md-8">
+        <input #newDislikes type="text">
+        </div>
+      </div>
        <button (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newGender.value, newLikes.value, newDislikes.value);">ADD</button>
      </div>
   `

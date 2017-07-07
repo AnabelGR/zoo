@@ -1,0 +1,55 @@
+* {
+  font-family: 'Zilla Slab', serif;
+  background-color: #FFE519;
+}
+
+body {
+  background-color: #782DF4;
+
+}
+
+.jumbotron {
+  height: 200px;
+}
+
+input[type="text"] {
+  background: #782DF4;
+  border: none;
+  width: 200px;
+}
+
+label {
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+}
+
+button {
+  background-color: #30017D;
+  color: #FFE519;
+}
+
+
+/*input[type="checkbox"] + label {
+  font-weight: 400;
+  font-size: 14px;
+}*/
+
+/*input[type="checkbox"] + label span {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}*/

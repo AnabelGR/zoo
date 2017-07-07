@@ -5,15 +5,13 @@ import { Animal } from './animal.model';
   selector: 'animal-list',
   template: `
   <select (change)="onChange($event.target.value)">
-    <option value="allAnimals">All Animals</option>
-    <option value="youngAnimals">Young Animals</option>
-    <option value="matureAnimals" selected="selected">Mature Animals</option>
+    <option value="allAnimals" selected="selected">ALL ANIMALS</option>
+    <option value="youngAnimals">YOUNG ANIMALS</option>
+    <option value="matureAnimals">MATURE ANIMALS</option>
   </select>
   <ul>
-    <li (click)="isDone(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | sortingByAge:filterBySortingByAge">{{currentAnimal.species}}: {{currentAnimal.name}}, Age {{currentAnimal.age}}
-      <input *ngIf="currentAnimal.done === true" type="checkbox" checked (click)="toggleDone(currentAnimal, false)"/>
-      <input *ngIf="currentAnimal.done === false" type="checkbox" (click)="toggleDone(currentAnimal, true)"/>
-      <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
+    <li (click)="isAge(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | sortingByAge:filterBySortingByAge">{{currentAnimal.species}}: {{currentAnimal.name}}<p>Age: {{currentAnimal.age}}</p><p>Gender: {{currentAnimal.gender}}</p><p>Diet: {{currentAnimal.diet}}</p><p>Location: {{currentAnimal.location}}</p><p>Caretakers needed: {{currentAnimal.caretakers}}</p><p>Likes: {{currentAnimal.likes}}</p><p>Dislikes: {{currentAnimal.dislikes}}</p>
+      <button class="btn" (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
     </li>
   </ul>
   `
@@ -28,28 +26,10 @@ export class AnimalListComponent {
     this.clickSender.emit(animalToEdit);
   }
 
-  isDone(clickedAnimal: Animal) {
-    if(clickedAnimal.done === true) {
-      alert("This animal is cared for!");
-    } else {
-      alert("This animal is not cared for. Better get to work!");
-    }
-  }
-
-  priorityColor(currentAnimal){
-    if (currentAnimal.age <=3){
-      return "bg-danger";
-    } else if (currentAnimal.age > 3) {
-      return  "bg-warning";
-    } else {
-      return "bg-info";
-    }
-  }
-
   onChange(optionFromMenu) {
     this.filterBySortingByAge = optionFromMenu;
   }
-  toggleDone(clickedAnimal: Animal, setSortingByAge: boolean) {
-     clickedAnimal.done = setSortingByAge;
+  toggleAge(clickedAnimal: Animal, setSortingByAge: number) {
+     clickedAnimal.age = setSortingByAge;
    }
 }

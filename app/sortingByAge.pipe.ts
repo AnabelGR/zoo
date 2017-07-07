@@ -7,20 +7,18 @@ import {Animal} from './animal.model';
 })
 
 export class SortingByAgePipe implements PipeTransform {
-
-
   transform(input: Animal[], desiredSortingByAge) {
     var output: Animal[] = [];
     if(desiredSortingByAge === "youngAnimals") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].done === false) {
+        if (input[i].age <= 2) {
           output.push(input[i]);
         }
       }
       return output;
     } else if (desiredSortingByAge === "matureAnimals") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].done === true) {
+        if (input[i].age >= 3) {
           output.push(input[i]);
         }
       }
