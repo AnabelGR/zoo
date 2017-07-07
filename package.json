@@ -48,7 +48,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "description": "#### An Epicodus independent project in Angular2, 07.07.17",
-  "main": "gulpfile.js",
+  "main": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnabelGR/zoo.git"

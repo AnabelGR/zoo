@@ -84,7 +84,7 @@ ________________________
   - npm install typescript -g
   - apm install atom-typescript
 
-6. Write gulpfile.js document, requires the following variables and their associated Meals:
+6. Write gulpfile.js document, requires the following variables and their associated Tasks:
   ```Javascript
   var gulp = require('gulp');
   var concat = require('gulp-concat');
@@ -110,40 +110,40 @@ ________________________
   });
 
   ////////////////////// TYPESCRIPT //////////////////////
-  gulp.Meal('tsClean', function(){
+  gulp.task('tsClean', function(){
     return del(['app/*.js', 'app/*.js.map']);
   });
 
-  gulp.Meal('ts', ['tsClean'], shell.Meal([
+  gulp.task('ts', ['tsClean'], shell.task([
     'tsc'
   ]));
 
   ////////////////////// BOWER //////////////////////
-  gulp.Meal('jsBowerClean', function(){
+  gulp.task('jsBowerClean', function(){
     return del(['./build/js/vendor.min.js']);
   });
 
-  gulp.Meal('jsBower', ['jsBowerClean'], function() {
+  gulp.task('jsBower', ['jsBowerClean'], function() {
     return gulp.src(lib.ext('js').files)
       .pipe(concat('vendor.min.js'))
       .pipe(uglify())
       .pipe(gulp.dest('./build/js'));
   });
 
-  gulp.Meal('cssBowerClean', function(){
+  gulp.task('cssBowerClean', function(){
     return del(['./build/css/vendor.css']);
   });
 
-  gulp.Meal('cssBower', ['cssBowerClean'], function() {
+  gulp.task('cssBower', ['cssBowerClean'], function() {
     return gulp.src(lib.ext('css').files)
       .pipe(concat('vendor.css'))
       .pipe(gulp.dest('./build/css'));
   });
 
-  gulp.Meal('bower', ['jsBower', 'cssBower']);
+  gulp.task('bower', ['jsBower', 'cssBower']);
 
   ////////////////////// SASS //////////////////////
-  gulp.Meal('sassBuild', function() {
+  gulp.task('sassBuild', function() {
     return gulp.src(['resources/styles/*'])
       .pipe(sourcemaps.init())
       .pipe(sass())
@@ -152,7 +152,7 @@ ________________________
   });
 
   ////////////////////// SERVER //////////////////////
-  gulp.Meal('serve', ['build'], function() {
+  gulp.task('serve', ['build'], function() {
     browserSync.init({
       server: {
         baseDir: "./",
@@ -165,24 +165,24 @@ ________________________
     gulp.watch(['app/*.ts'], ['tsBuild']); // typescript files change, compile then reload.
   });
 
-  gulp.Meal('jsBuild', function(){
+  gulp.task('jsBuild', function(){
     browserSync.reload();
   });
 
-  gulp.Meal('htmlBuild', function(){
+  gulp.task('htmlBuild', function(){
     browserSync.reload();
   });
 
-  gulp.Meal('cssBuild', ['sassBuild'], function(){
+  gulp.task('cssBuild', ['sassBuild'], function(){
     browserSync.reload();
   });
 
-  gulp.Meal('tsBuild', ['ts'], function(){
+  gulp.task('tsBuild', ['ts'], function(){
     browserSync.reload();
   });
 
-  ////////////////////// GLOBAL BUILD Meal //////////////////////
-  gulp.Meal('build', ['ts'], function(){
+  ////////////////////// GLOBAL BUILD task //////////////////////
+  gulp.task('build', ['ts'], function(){
     // we can use the buildProduction environment variable here later.
     gulp.start('bower');
     gulp.start('sassBuild');
@@ -190,14 +190,14 @@ ________________________
 ```
 
 7. Install packages
-  - Run chmod +x ~/Desktop/meal_tracker/batch_npm to make file executable
+  - Run chmod +x {file location in project directory root folder} to make file executable
   - Run { bash batch_npm } and all commands will run
 
 8. Index html headers and body
 ```html
 <html>
   <head>
-    <title>Meal Tracker</title>
+    <title>Zoo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="build/js/vendor.min.js"></script>
@@ -225,7 +225,7 @@ ________________________
 11. pacakge.json file
 ```json
 {
-  "name": "meal-tracker",
+  "name": "zoo",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
@@ -295,7 +295,7 @@ ________________________
     selector: 'app-root',
     template: `
     <div class="container">
-      <h1>Meal Tracker</h1>
+      <h1>Zoo-rific</h1>
     </div>
     `
   })
