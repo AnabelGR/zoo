@@ -1,0 +1,25 @@
+{
+  "name": "zoo",
+  "description": "#### An Epicodus independent project in Angular2, 07.07.17",
+  "main": "gulpfile.js",
+  "authors": [
+    "Anabel Ramirez"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular2"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.18.1",
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
