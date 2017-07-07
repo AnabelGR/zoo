@@ -1,4 +1,4 @@
-# Zoo
+# Zoo Tracks
 
 #### An Epicodus independent project in Angular2, 07.07.17
 
@@ -6,16 +6,36 @@
 
 ## Description
 
-This web application will allow zoo staff to view all beers/kegs sold by name, brewery, price, keg level, and alcohol content. Employees can add and edit keg listings.
+This web application will allow zoo staff to view all animals currently at the zoo, add new animals to the list, and edit their information.
 
 |Behavior| Input (User Action/Selection) |Output|
 |---|:---|:---|
 |Staff can view a list of animals. | "Rose, Elephant", "Inra, Tiger", "Zoe, Zebra"|"Rose, Elephant", "Inra, Tiger", "Zoe, Zebra"|
-|Staff can view a list of young animals. | "Rose, Elephant, 3", "Zoe, Zebra, 2"|"Rose, Elephant, 3", "Zoe, Zebra, 2"|
-|Staff can view a list of mature animals. | "Inra, Tiger",|"Inra, Tiger, 8"|
-|Staff can see details of a selected animal. | "click Rose the Elephant"|Species: "Elephant", Name: "Rose", Age: 3, Diet: "Vegetarian", Location: "Elephant Reprise", Caretakers: 6, Sex: "Female", Likes: "pumpkins", Dislikes: "exercise"|
+|Staff can view a list of young animals. | "Rose, Elephant, 1", "Zoe, Zebra, 2"|"Rose, Elephant, 1", "Zoe, Zebra, 2"|
+|Staff can view a list of mature animals. | "Inra, Tiger, 8"|"Inra, Tiger, 8"|
+|Staff can see details of animals. | Species: "Elephant", Name: "Rose", Age: 3, Diet: "Vegetarian", Location: "Elephant Reprise", Caretakers: 6, Sex: "Female", Likes: "pumpkins", Dislikes: "exercise"|Species: "Elephant", Name: "Rose", Age: 3, Diet: "Vegetarian", Location: "Elephant Reprise", Caretakers: 6, Sex: "Female", Likes: "pumpkins", Dislikes: "exerÂcise"|
 |Staff can add newly-admitted animals. | add: Species: "Elephant", Name: "Rose", Age: 3, Diet: "Vegetarian", Location: "Elephant Reprise", Caretakers: 6, Sex: "Female", Likes: "pumpkins", Dislikes: "exercise"| Species: "Elephant", Name: "Rose", Age: 3, Diet: "Vegetarian", Location: "Elephant Reprise", Caretakers: 6, Sex: "Female", Likes: "pumpkins", Dislikes: "exercise"|
 |Staff can edit an animal's record.|Species: "Elephant", Name: "Rose", Age: 6, Diet: "Vegetarian", Location: "Elephant Corral", Caretakers: 6, Sex: "Female", Likes: "pumpkins", Dislikes: "exercise"|Species: "Elephant", Name: "Rose", Age: 6, Diet: "Vegetarian", Location: "Elephant Corral", Caretakers: 6, Sex: "Female", Likes: "pumpkins", Dislikes: "exercise"|
+
+## Further development:
+![alt text](screenshots/navbar1.png)
+
+- This mock up navigational bar showcases other elements this application could include.
+  - Online Learning Guide: Zoo Tracks would develop a learning game using the different tracks animals leave.
+  - Educational Outreach: A place for teachers to submit zoo visit requests and also find educational links about the animals at the zoo.
+  - Volunteer Opportunities: A place for volunteers to submit their requests and a scheduling interface for zoo staff.
+  - Zoo Information: The general information about the zoo such as address, parking, hours, job opportunities, and special events (ultimately could have its own page link).
+  - Employee Login: Logging in hours, checking schedule, requesting leave of absence.
+- Additionally, the specs below would be added to the current interface:
+
+|Behavior| Input (User Action/Selection) |Output|
+|---|:---|:---|
+|Staff can view the number of caretakers required per day. | "25"|"25"|
+|Staff can timestamp when a new animal joins the zoo. | "07/12/17"|"07/12/17"|
+|Staff can view the animals by species. | "elephants"|"6 records"|
+|Staff can view the number of caretakers required by species. | "6"|"6"|
+|Staff can view the average age of all the animals. | "16"|"16"|
+|Staff can view animals by diet restrictions. | "herbivores"|"43 records"|
 
 
 ## Setup/Installation Requirements

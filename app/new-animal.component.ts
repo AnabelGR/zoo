@@ -8,19 +8,19 @@ import { Animal } from './animal.model';
     <h1>New Animal</h1>
       <div class="row">
         <div class="col-md-3">
-        <label>Enter Animal Species:</label>
-        </div>
-        <div class="col-md-9">
-        <input #newSpecies type="text">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
         <label>Enter Animal Name:</label>
         </div>
         <div class="col-md-9">
         <input #newName type="text">
         </div>
+      </div>
+      <div class="row">
+      <div class="col-md-3">
+      <label>Enter Animal Species:</label>
+      </div>
+      <div class="col-md-9">
+      <input #newSpecies type="text">
+      </div>
       </div>
       <div class="row">
         <div class="col-md-3">
@@ -80,7 +80,7 @@ import { Animal } from './animal.model';
       </div>
       <div class="row">
         <div class="col-md-3">
-        <label>Enter Animal Image Link of tracks:</label>
+        <label>Enter Link of Tracks:</label>
         </div>
          <div class="col-md-9">
         <input #newImageUrl type="text">
@@ -94,7 +94,7 @@ import { Animal } from './animal.model';
         <input #newPhotoLink type="text">
         </div>
       </div>
-       <button (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newGender.value, newLikes.value, newDislikes.value, newImageUrl.value, newPhotoLink.value);">ADD</button>
+       <button (click)="submitForm(newPhotoLink.value, newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newGender.value, newLikes.value, newDislikes.value, newImageUrl.value, newSpecies.value='', newName.value='', newAge.value='', newDiet.value='', newLocation.value='', newCaretakers.value='', newGender.value='', newLikes.value='', newDislikes.value='', newImageUrl.value='', newPhotoLink.value='');">ADD</button>
      </div>
   `
 })

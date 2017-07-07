@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { Animal } from './animal.model';
 
-
 @Component({
   selector: 'app-root',
   template: `
   <div class="container">
-    <h3>Animal Log Update: {{month}}.{{day}}.{{year}}</h3>
+    <h2>Animal Log Update: {{month}}.{{day}}.{{year}}</h2>
     <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
     <hr>
     <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>

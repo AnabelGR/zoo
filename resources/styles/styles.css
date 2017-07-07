@@ -4,10 +4,16 @@
   list-style: none;
 }
 
+body {
+  background-color: #FFE049;
+}
+
 button {
   background-color: #30017D;
   color: #FFE519;
   margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  width: 100px;
 }
 
 input {
@@ -23,7 +29,15 @@ label {
 }
 
 p {
-  font-size: 16px;
+  font-size: 20px;
+}
+
+select {
+  background-color: #30017D;
+  color: #FFE519;
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  width: 200px;
 }
 
 .footer {
@@ -38,8 +52,16 @@ p {
   height: 200px;
 }
 
+.navbar-btn {
+  width: auto;
+}
+
 .photo {
   height: 250px;
+}
+
+.rightAlign {
+  text-align: right;
 }
 
 .tracks {
