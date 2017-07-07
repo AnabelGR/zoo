@@ -10,7 +10,7 @@ import { Animal } from './animal.model';
     <option value="matureAnimals">MATURE ANIMALS</option>
   </select>
   <ul>
-    <li (click)="isAge(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | sortingByAge:filterBySortingByAge">{{currentAnimal.species}}: {{currentAnimal.name}}<p>Age: {{currentAnimal.age}}</p><p>Gender: {{currentAnimal.gender}}</p><p>Diet: {{currentAnimal.diet}}</p><p>Location: {{currentAnimal.location}}</p><p>Caretakers needed: {{currentAnimal.caretakers}}</p><p>Likes: {{currentAnimal.likes}}</p><p>Dislikes: {{currentAnimal.dislikes}}</p>
+    <li (click)="isAge(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | sortingByAge:filterBySortingByAge">{{currentAnimal.species}}: {{currentAnimal.name}}<p>Age: {{currentAnimal.age}}</p><p>Gender: {{currentAnimal.gender}}</p><p>Diet: {{currentAnimal.diet}}</p><p>Location: {{currentAnimal.location}}</p><p>Caretakers needed: {{currentAnimal.caretakers}}</p><p>Likes: {{currentAnimal.likes}}</p><p>Dislikes: {{currentAnimal.dislikes}}</p><p>Tracks: <img src={{currentAnimal.imageUrl}} class="tracks"/></p>
       <button class="btn" (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
     </li>
   </ul>

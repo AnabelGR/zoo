@@ -12,6 +12,10 @@ body {
   height: 200px;
 }
 
+.tracks {
+  width: 50px;
+}
+
 input[type="text"] {
   background: #782DF4;
   border: none;
